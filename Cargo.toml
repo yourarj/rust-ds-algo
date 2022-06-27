@@ -5,4 +5,9 @@ lto = true
 codegen-units = 1
 
 [workspace]
-members = ["leetcode-two-sum", "codility-possible-string-palindrome", "codility-binary-gap"]
+members = [
+    "leetcode-two-sum",
+    "codility-possible-string-palindrome",
+    "codility-binary-gap",
+    "codility-array-rotation",
+]
