@@ -1,0 +1,8 @@
+[profile.release]
+lto = true
+
+[profile.release.package.anchor-cli]
+codegen-units = 1
+
+[workspace]
+members = ["leetcode-two-sum", "codility-possible-string-palindrome"]
