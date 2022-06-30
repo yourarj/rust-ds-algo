@@ -11,7 +11,19 @@ name = "codility-binary-gap"
 version = "0.1.0"
 
 [[package]]
+name = "codility-frog-jump"
+version = "0.1.0"
+
+[[package]]
 name = "codility-possible-string-palindrome"
+version = "0.1.0"
+
+[[package]]
+name = "leetcode-median-of-two-sorted-arrays"
+version = "0.1.0"
+
+[[package]]
+name = "leetcode-queue-reconstruction-by-height"
 version = "0.1.0"
 
 [[package]]

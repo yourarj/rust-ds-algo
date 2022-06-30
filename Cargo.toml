@@ -10,4 +10,7 @@ members = [
     "codility-possible-string-palindrome",
     "codility-binary-gap",
     "codility-array-rotation",
+    "codility-frog-jump",
+    "leetcode-median-of-two-sorted-arrays",
+    "leetcode-queue-reconstruction-by-height"
 ]

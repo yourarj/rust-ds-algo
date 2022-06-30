@@ -1,13 +1,16 @@
+use std::ops::Deref;
+
 fn main() {
     println!("Hello, world!");
 }
 
+use std::collections::HashMap;
 pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
-    let mut complement_map_with_index = std::collections::HashMap::<i32, i32>::new();
+    let mut complement_map_with_index = HashMap::<i32, i32>::new();
     let mut answer = Vec::new();
-    for (index, element) in nums.iter().enumerate() {
-        if complement_map_with_index.contains_key(element) {
-            answer.push(complement_map_with_index.get(element).unwrap().to_owned());
+    for (index, element) in nums.into_iter().enumerate() {
+        if complement_map_with_index.contains_key(&element) {
+            answer.push(*complement_map_with_index.get(&element).unwrap().deref());
             answer.push(index as i32);
             break;
         }
