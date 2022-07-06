@@ -19,7 +19,7 @@ name = "codility-possible-string-palindrome"
 version = "0.1.0"
 
 [[package]]
-name = "leetcode-median-of-two-sorted-arrays"
+name = "leetcode-add-two-numbers"
 version = "0.1.0"
 
 [[package]]

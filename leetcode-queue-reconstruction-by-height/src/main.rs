@@ -14,7 +14,7 @@ impl Solution {
             } else {
                 if two[1] > one[1] {
                     ord = Ordering::Less;
-                } else if two[1] < one[1]{
+                } else if two[1] < one[1] {
                     ord = Ordering::Greater;
                 }
             }
