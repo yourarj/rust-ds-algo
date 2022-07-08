@@ -19,7 +19,7 @@ fn main() {
 
 fn solution(str: &str) -> String {
     let str_length = str.len();
-    let approx_mid = str_length as f32 / 2 as f32;
+    let approx_mid = str_length as f32 / 2_f32;
 
     println!("approx mid: {}", approx_mid);
     let mid_of_array = approx_mid;
@@ -47,5 +47,5 @@ fn solution(str: &str) -> String {
             return "NO".to_owned();
         }
     }
-    return str_chars.into_iter().collect();
+    str_chars.into_iter().collect()
 }

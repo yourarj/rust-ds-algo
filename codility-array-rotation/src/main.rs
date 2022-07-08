@@ -4,7 +4,7 @@ fn main() {
 }
 
 fn solution(input_array: &mut [i32], rotations: i32) -> &[i32] {
-    if input_array.len() == 0 {
+    if input_array.is_empty() {
         return input_array;
     }
 

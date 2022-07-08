@@ -4,19 +4,17 @@ struct Solution;
 
 impl Solution {
     pub fn reconstruct_queue(people: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
-        let mut pep_ref = people.clone();
+        let mut pep_ref = people;
         pep_ref.sort_by(|one, two| {
             let mut ord = Ordering::Equal;
             if two[0] < one[0] {
                 ord = Ordering::Less;
             } else if two[0] > one[0] {
                 ord = Ordering::Greater;
-            } else {
-                if two[1] > one[1] {
-                    ord = Ordering::Less;
-                } else if two[1] < one[1] {
-                    ord = Ordering::Greater;
-                }
+            } else if two[1] > one[1] {
+                ord = Ordering::Less;
+            } else if two[1] < one[1] {
+                ord = Ordering::Greater;
             }
             ord
         });

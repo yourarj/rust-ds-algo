@@ -23,6 +23,10 @@ name = "leetcode-add-two-numbers"
 version = "0.1.0"
 
 [[package]]
+name = "leetcode-basic-calculator-ii"
+version = "0.1.0"
+
+[[package]]
 name = "leetcode-queue-reconstruction-by-height"
 version = "0.1.0"
 
