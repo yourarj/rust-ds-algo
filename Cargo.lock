@@ -35,5 +35,9 @@ name = "leetcode-queue-reconstruction-by-height"
 version = "0.1.0"
 
 [[package]]
+name = "leetcode-subtract-the-product-and-sum-of-digits-of-an-integer"
+version = "0.1.0"
+
+[[package]]
 name = "leetcode-two-sum"
 version = "0.1.0"
