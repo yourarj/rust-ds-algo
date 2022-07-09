@@ -14,4 +14,5 @@ members = [
     "leetcode-queue-reconstruction-by-height",
     "leetcode-add-two-numbers",
     "leetcode-basic-calculator-ii",
+    "leetcode-car-pooling",
 ]
