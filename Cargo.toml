@@ -16,4 +16,5 @@ members = [
     "leetcode-basic-calculator-ii",
     "leetcode-car-pooling",
     "leetcode-subtract-the-product-and-sum-of-digits-of-an-integer",
+    "leetcode-longest-word-in-dictionary-through-deleting",
 ]
