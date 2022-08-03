@@ -31,6 +31,10 @@ name = "leetcode-car-pooling"
 version = "0.1.0"
 
 [[package]]
+name = "leetcode-check-if-number-has-equal-digit-count-and-digit-value"
+version = "0.1.0"
+
+[[package]]
 name = "leetcode-longest-word-in-dictionary-through-deleting"
 version = "0.1.0"
 

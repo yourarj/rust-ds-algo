@@ -17,4 +17,5 @@ members = [
     "leetcode-car-pooling",
     "leetcode-subtract-the-product-and-sum-of-digits-of-an-integer",
     "leetcode-longest-word-in-dictionary-through-deleting",
+    "leetcode-check-if-number-has-equal-digit-count-and-digit-value",
 ]
