@@ -20,4 +20,5 @@ members = [
     "leetcode-check-if-number-has-equal-digit-count-and-digit-value",
     "leetcode-numbers-with-same-consecutive-differences",
     "leetcode-design-a-stack-with-increment-operation",
+    "leetcode-jump-game-iv",
 ]

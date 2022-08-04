@@ -39,6 +39,10 @@ name = "leetcode-design-a-stack-with-increment-operation"
 version = "0.1.0"
 
 [[package]]
+name = "leetcode-jump-game-iv"
+version = "0.1.0"
+
+[[package]]
 name = "leetcode-longest-word-in-dictionary-through-deleting"
 version = "0.1.0"
 
