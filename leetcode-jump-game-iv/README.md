@@ -1,4 +1,5 @@
 # 1345. Jump Game IV [Minimum jumps to reach the end]
+
 `Hard`
 
 Given an array of integers arr, you are initially positioned at the first index of the array.
@@ -8,7 +9,7 @@ In one step you can jump from index `i` to index:
 - `i + 1` where: `i + 1 < arr.length`.
 - `i - 1` where: `i - 1 >= 0`.
 - `j` where: `arr[i] == arr[j]` and `i != j`.
-  
+
 Return the minimum number of steps to reach the **last index** of the array.
 
 Notice that you can not jump outside of the array at any time.
@@ -35,9 +36,15 @@ Explanation: Start index is the last index. You do not need to jump.
 Input: arr = [7,6,9,6,9,6,9,7]
 Output: 1
 Explanation: You can jump directly from index 0 to index 7 which is last index of the array.
-``` 
+```
 
 ### **Constraints:**
 
 - `1 <= arr.length <= 5 * 104`
 - `-108 <= arr[i] <= 108`
+
+## **Solution**
+
+> ### Runtime: `71 ms`, faster than `100.00%` of Rust online submissions for Jump Game IV.
+>
+> ### Memory Usage: `7.7` MB, less than `100.00%` of Rust online submissions for Jump Game IV.
