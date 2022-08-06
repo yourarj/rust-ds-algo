@@ -22,4 +22,5 @@ members = [
     "leetcode-design-a-stack-with-increment-operation",
     "leetcode-jump-game-iv",
     "leetcode-longest-substring-without-repeating-characters",
+    "leetcode-median-of-two-sorted-arrays"
 ]
