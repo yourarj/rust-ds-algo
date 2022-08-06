@@ -21,4 +21,5 @@ members = [
     "leetcode-numbers-with-same-consecutive-differences",
     "leetcode-design-a-stack-with-increment-operation",
     "leetcode-jump-game-iv",
+    "leetcode-longest-substring-without-repeating-characters",
 ]

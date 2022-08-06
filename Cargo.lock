@@ -43,6 +43,10 @@ name = "leetcode-jump-game-iv"
 version = "0.1.0"
 
 [[package]]
+name = "leetcode-longest-substring-without-repeating-characters"
+version = "0.1.0"
+
+[[package]]
 name = "leetcode-longest-word-in-dictionary-through-deleting"
 version = "0.1.0"
 
