@@ -1,4 +1,4 @@
-# Furthest Building You Can Reach
+# [Furthest Building You Can Reach](https://leetcode.com/problems/furthest-building-you-can-reach/)
 `Medium`
 
 You are given an integer array `heights` representing the heights of buildings, some `bricks`, and some `ladders/ropes`.
@@ -39,9 +39,15 @@ _Return the furthest building index (0-indexed) you can reach if you use the giv
     Output: 3
  
 
-Constraints:
+### **Constraints:**
 
 - `1 <= heights.length <= 105`
 - `1 <= heights[i] <= 106`
 - `0 <= bricks <= 109`
 - `0 <= ladders <= heights.length`
+
+
+### **Solution**
+
+> ### Runtime: **`9 ms`**, faster than **`99.49%`** of Rust online submissions for Furthest Building You Can Reach.
+> ### Memory Usage: **` 2.9 MB`**, less than **`86.22%`** of Rust online submissions for Furthest Building You Can Reach.
