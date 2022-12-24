@@ -153,6 +153,12 @@ mod tests {
         qf.union(7, 3);
 
         // the above unions creates single connected structure
+        //
+        // array should be
+        // arr = {6, 2, 6, 4, 6, 6, 6, 2, 4, 4}
+        //
+        // and weights should be
+        // weights = {1, 1, 3, 1, 4, 1, 10, 1, 1, 1}
 
         // set two all mus be connected
         assert_eq!(true, qf.connected(0, 0));
