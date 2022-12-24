@@ -1,18 +1,27 @@
 /// Weighted Quick union
 /// In this we would assume the index as the number itself and
 /// value at the index as the parent of the that number
-/// if a number points to itsef means it's root of the tree.
-/// In addition to datastructures in naive Quick Union we also
+/// if a number points to itself means it's root of the tree.
+/// In addition to data structures in naive Quick Union we also
 /// maintain additional array representing weight of the specific ith node.
 
-pub struct WeightedQuickUnion<'arr> {
-    arr: &'arr mut [usize],
+pub struct WeightedQuickUnion<const SIZE: usize> {
+    arr: [usize; SIZE],
+    weights: [usize; SIZE],
 }
 
-impl<'arr> WeightedQuickUnion<'arr> {
+impl<const SIZE: usize> WeightedQuickUnion<SIZE> {
     /// create new instance of QuickUnion
-    pub fn new(arr: &'arr mut [usize]) -> Self {
-        WeightedQuickUnion { arr }
+    pub fn new() -> Self {
+        let mut arr = [0; SIZE];
+
+        for index in 0..SIZE {
+            arr[index] = index;
+        }
+        WeightedQuickUnion {
+            arr: arr,
+            weights: [1; SIZE],
+        }
     }
 
     /// find the root of given num
@@ -29,7 +38,7 @@ impl<'arr> WeightedQuickUnion<'arr> {
     }
 
     pub fn union(&mut self, a: usize, b: usize) {
-        // TODO udpate code to for weight comparision
+        // TODO update code to for weight comparison
         let root_a = self.root(a);
         let root_b = self.root(b);
 
@@ -37,7 +46,13 @@ impl<'arr> WeightedQuickUnion<'arr> {
             return;
         }
 
-        self.arr[b] = root_a;
+        if self.weights[root_a] < self.weights[root_b] {
+            self.arr[root_a] = root_b;
+            self.weights[root_a] += self.weights[root_b];
+        } else {
+            self.arr[root_b] = root_a;
+            self.weights[root_b] += self.weights[root_b];
+        }
     }
 }
 
@@ -47,8 +62,7 @@ mod tests {
 
     #[test]
     fn it_works() {
-        let mut arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-        let mut qf = WeightedQuickUnion::new(&mut arr);
+        let mut qf = WeightedQuickUnion::<10>::new();
         qf.union(4, 3);
         qf.union(3, 8);
         qf.union(6, 5);
