@@ -75,9 +75,67 @@ mod tests {
         qf.union(1, 0);
         qf.union(6, 7);
 
-        assert_eq!(false, qf.connected(4, 6));
+        // the above unions creates two isolated connected structures
+        // {3,4,8,9}
+        // {0,1,2,5,6,7}
+        // no element from set 1 is connected to other one
+        // and every element in individual is connected to every other one.
+
+        // set one all must be connected
         assert_eq!(true, qf.connected(3, 4));
-        assert_eq!(true, qf.connected(6, 2));
+        assert_eq!(true, qf.connected(3, 8));
+        assert_eq!(true, qf.connected(3, 9));
+        assert_eq!(true, qf.connected(4, 8));
+        assert_eq!(true, qf.connected(4, 9));
+        assert_eq!(true, qf.connected(8, 9));
+
+        // must be connected to self
         assert_eq!(true, qf.connected(6, 6));
+
+        // set two all mus be connected
+        assert_eq!(true, qf.connected(0, 1));
+        assert_eq!(true, qf.connected(0, 2));
+        assert_eq!(true, qf.connected(0, 5));
+        assert_eq!(true, qf.connected(0, 6));
+        assert_eq!(true, qf.connected(0, 7));
+        assert_eq!(true, qf.connected(1, 2));
+        assert_eq!(true, qf.connected(1, 5));
+        assert_eq!(true, qf.connected(1, 6));
+        assert_eq!(true, qf.connected(1, 7));
+        assert_eq!(true, qf.connected(2, 5));
+        assert_eq!(true, qf.connected(2, 6));
+        assert_eq!(true, qf.connected(2, 7));
+        assert_eq!(true, qf.connected(5, 6));
+        assert_eq!(true, qf.connected(5, 7));
+        assert_eq!(true, qf.connected(6, 7));
+
+        // the two sets must not be connected in any way
+        assert_eq!(false, qf.connected(3, 0));
+        assert_eq!(false, qf.connected(3, 1));
+        assert_eq!(false, qf.connected(3, 2));
+        assert_eq!(false, qf.connected(3, 5));
+        assert_eq!(false, qf.connected(3, 6));
+        assert_eq!(false, qf.connected(3, 7));
+
+        assert_eq!(false, qf.connected(4, 0));
+        assert_eq!(false, qf.connected(4, 1));
+        assert_eq!(false, qf.connected(4, 2));
+        assert_eq!(false, qf.connected(4, 5));
+        assert_eq!(false, qf.connected(4, 6));
+        assert_eq!(false, qf.connected(4, 7));
+
+        assert_eq!(false, qf.connected(8, 0));
+        assert_eq!(false, qf.connected(8, 1));
+        assert_eq!(false, qf.connected(8, 2));
+        assert_eq!(false, qf.connected(8, 5));
+        assert_eq!(false, qf.connected(8, 6));
+        assert_eq!(false, qf.connected(8, 7));
+
+        assert_eq!(false, qf.connected(9, 0));
+        assert_eq!(false, qf.connected(9, 1));
+        assert_eq!(false, qf.connected(9, 2));
+        assert_eq!(false, qf.connected(9, 5));
+        assert_eq!(false, qf.connected(9, 6));
+        assert_eq!(false, qf.connected(9, 7));
     }
 }
