@@ -1,6 +1,6 @@
 # Weighted Quick Union
 
-## Part of Algorithm part I coursersa & University of Princeton
+## Part of Algorithm part I coursera & University of Princeton
 
 ### Optimized Union-Find approach
 
