@@ -23,5 +23,6 @@ members = [
     "leetcode-jump-game-iv",
     "leetcode-longest-substring-without-repeating-characters",
     "leetcode-furthest-building-you-can-reach",
-    "leetcode-build-an-array-with-stack-operations"
+    "leetcode-build-an-array-with-stack-operations",
+    "university-of-princeton-quick-find",
 ]
