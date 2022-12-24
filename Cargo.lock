@@ -81,3 +81,7 @@ version = "0.1.0"
 [[package]]
 name = "university-of-princeton-quick-union"
 version = "0.1.0"
+
+[[package]]
+name = "university-of-princeton-weighted-quick-union"
+version = "0.1.0"

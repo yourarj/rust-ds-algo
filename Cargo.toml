@@ -26,4 +26,5 @@ members = [
     "leetcode-build-an-array-with-stack-operations",
     "university-of-princeton-quick-find",
     "university-of-princeton-quick-union",
+    "university-of-princeton-weighted-quick-union",
 ]
