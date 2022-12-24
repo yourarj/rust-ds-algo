@@ -48,10 +48,10 @@ impl<const SIZE: usize> WeightedQuickUnion<SIZE> {
 
         if self.weights[root_a] < self.weights[root_b] {
             self.arr[root_a] = root_b;
-            self.weights[root_a] += self.weights[root_b];
+            self.weights[root_b] += self.weights[root_a];
         } else {
             self.arr[root_b] = root_a;
-            self.weights[root_b] += self.weights[root_b];
+            self.weights[root_a] += self.weights[root_b];
         }
     }
 }
@@ -137,5 +137,33 @@ mod tests {
         assert_eq!(false, qf.connected(9, 5));
         assert_eq!(false, qf.connected(9, 6));
         assert_eq!(false, qf.connected(9, 7));
+    }
+
+    #[test]
+    fn it_works_from_lecture() {
+        let mut qf = WeightedQuickUnion::<10>::new();
+        qf.union(4, 3);
+        qf.union(3, 8);
+        qf.union(6, 5);
+        qf.union(9, 4);
+        qf.union(2, 1);
+        qf.union(5, 0);
+        qf.union(7, 2);
+        qf.union(6, 1);
+        qf.union(7, 3);
+
+        // the above unions creates single connected structure
+
+        // set two all mus be connected
+        assert_eq!(true, qf.connected(0, 0));
+        assert_eq!(true, qf.connected(0, 1));
+        assert_eq!(true, qf.connected(0, 2));
+        assert_eq!(true, qf.connected(0, 3));
+        assert_eq!(true, qf.connected(0, 4));
+        assert_eq!(true, qf.connected(0, 5));
+        assert_eq!(true, qf.connected(0, 6));
+        assert_eq!(true, qf.connected(0, 7));
+        assert_eq!(true, qf.connected(0, 8));
+        assert_eq!(true, qf.connected(0, 9));
     }
 }
