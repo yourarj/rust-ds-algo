@@ -47,13 +47,17 @@ impl<const SIZE: usize> WeightedQuickUnion<SIZE> {
             return;
         }
 
-        if self.weights[root_a] < self.weights[root_b] {
+        if root_a < root_b {
             self.arr[root_a] = root_b;
             self.weights[root_b] += self.weights[root_a];
         } else {
             self.arr[root_b] = root_a;
             self.weights[root_a] += self.weights[root_b];
         }
+    }
+
+    pub fn find_largest(&mut self, num: usize) -> usize {
+        self.root(num)
     }
 }
 
@@ -65,6 +69,9 @@ mod tests {
     fn it_works_from_lecture() {
         let mut qf = WeightedQuickUnion::<10>::new();
         qf.union(4, 3);
+        println!("{}", qf.find_largest(3));
+
+        println!("{}", qf.find_largest(3));
         qf.union(3, 8);
         qf.union(6, 5);
         qf.union(9, 4);
@@ -74,6 +81,6 @@ mod tests {
         qf.union(6, 1);
         qf.union(7, 3);
 
-        assert!(qf.completely_connected());
+        assert_eq!(9, qf.find_largest(3));
     }
 }

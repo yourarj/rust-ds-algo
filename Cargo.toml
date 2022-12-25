@@ -1,9 +1,6 @@
 [profile.release]
 lto = true
 
-[profile.release.package.anchor-cli]
-codegen-units = 1
-
 [workspace]
 members = [
     "leetcode-two-sum",
@@ -29,4 +26,5 @@ members = [
     "university-of-princeton-weighted-quick-union",
     "university-of-princeton-path-compressed-weighted-quick-union",
     "university-of-princeton-path-compressed-weighted-quick-union-social",
+    "university-of-princeton-path-compressed-weighted-quick-union-canonical-element",
 ]
