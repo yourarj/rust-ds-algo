@@ -28,4 +28,5 @@ members = [
     "university-of-princeton-quick-union",
     "university-of-princeton-weighted-quick-union",
     "university-of-princeton-path-compressed-weighted-quick-union",
+    "university-of-princeton-path-compressed-weighted-quick-union-social",
 ]
