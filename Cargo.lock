@@ -75,6 +75,10 @@ name = "leetcode-two-sum"
 version = "0.1.0"
 
 [[package]]
+name = "university-of-princeton-path-compressed-percolation-threshold-via-monte-carlo-simulation"
+version = "0.1.0"
+
+[[package]]
 name = "university-of-princeton-path-compressed-weighted-quick-union"
 version = "0.1.0"
 
