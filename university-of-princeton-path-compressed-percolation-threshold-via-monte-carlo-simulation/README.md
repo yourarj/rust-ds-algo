@@ -1,11 +1,4 @@
-  Programming Assignment 1: Percolation
-
- [![](logo.png) Percolation](specification.php)
-
-*   [Spec](specification.php)
-*   [FAQ](faq.php)
-*   [Project](percolation.zip)
-*   [Submit](https://www.coursera.org/learn/algorithms-part1/programming/Lhp5z/percolation/submission)
+ # _percolation threshold_ via Monte Carlo simulation
 
 Write a program to estimate the value of the _percolation threshold_ via Monte Carlo simulation.
 
