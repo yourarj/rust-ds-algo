@@ -18,7 +18,7 @@ impl<const SIZE: usize> Percolation<SIZE> {
             grid: WeightedQuickUnionFind::new(),
             virtual_top: 0,
             // virtual_top + total_grid_elements + virtual_bottom
-            virtual_bottom: total_grid_elements + 2,
+            virtual_bottom: total_grid_elements + 1,
             total_open_sites: 0,
             grid_open_state: [[false; SIZE]; SIZE],
         }
@@ -26,12 +26,15 @@ impl<const SIZE: usize> Percolation<SIZE> {
 
     // opens the site (row, col) if it is not open already
     pub fn open(&mut self, row: usize, col: usize) {
+        self.grid_open_state[row][col] = true;
+        self.total_open_sites += 1;
+
         if row == 0 {
             self.grid.union(
                 self.virtual_top,
                 Self::translate_to_union_find_index(row, col),
             );
-        } else if self.is_valid_site(row + 1, col) && self.is_open(row + 1, col) {
+        } else if self.is_valid_site(row.checked_add(1), Some(col)) && self.is_open(row + 1, col) {
             self.grid.union(
                 Self::translate_to_union_find_index(row, col),
                 Self::translate_to_union_find_index(row + 1, col),
@@ -43,21 +46,21 @@ impl<const SIZE: usize> Percolation<SIZE> {
                 self.virtual_top,
                 Self::translate_to_union_find_index(row, col),
             );
-        } else if self.is_valid_site(row - 1, col) && self.is_open(row - 1, col) {
+        } else if self.is_valid_site(row.checked_sub(1), Some(col)) && self.is_open(row - 1, col) {
             self.grid.union(
                 Self::translate_to_union_find_index(row, col),
                 Self::translate_to_union_find_index(row - 1, col),
             );
         }
 
-        if self.is_valid_site(row, col - 1) && self.is_open(row, col - 1) {
+        if self.is_valid_site(Some(row), col.checked_sub(1)) && self.is_open(row, col - 1) {
             self.grid.union(
                 self.virtual_top,
                 Self::translate_to_union_find_index(row, col - 1),
             );
         }
 
-        if self.is_valid_site(row, col + 1) && self.is_open(row, col + 1) {
+        if self.is_valid_site(Some(row), col.checked_add(1)) && self.is_open(row, col + 1) {
             self.grid.union(
                 self.virtual_top,
                 Self::translate_to_union_find_index(row, col + 1),
@@ -95,8 +98,12 @@ impl<const SIZE: usize> Percolation<SIZE> {
     }
 
     // check if given site is valid
-    fn is_valid_site(&self, row: usize, col: usize) -> bool {
-        row < self.grid_size && col < self.grid_size
+    fn is_valid_site(&self, row: Option<usize>, col: Option<usize>) -> bool {
+        if let (Some(row), Some(col)) = (row, col) {
+            row < self.grid_size && col < self.grid_size
+        } else {
+            false
+        }
     }
 
     // test client (optional)
@@ -105,7 +112,35 @@ impl<const SIZE: usize> Percolation<SIZE> {
 
 #[cfg(test)]
 mod tests {
+    use crate::Percolation;
 
     #[test]
-    fn it_works() {}
+    fn it_works() {
+        let mut per = Percolation::<4>::new();
+        per.open(0, 0);
+        per.open(1, 0);
+        per.open(2, 0);
+        assert_eq!(false, per.percolates());
+        per.open(3, 0);
+        assert!(per.percolates());
+    }
+
+    #[test]
+    fn it_works_2() {
+        let mut per = Percolation::<4>::new();
+        per.open(0, 0);
+        per.open(0, 1);
+        per.open(0, 2);
+        per.open(0, 3);
+
+        per.open(1, 3);
+        per.open(2, 3);
+        per.open(2, 2);
+        per.open(2, 1);
+        per.open(2, 0);
+
+        assert_eq!(false, per.percolates());
+        per.open(3, 0);
+        assert!(per.percolates());
+    }
 }
