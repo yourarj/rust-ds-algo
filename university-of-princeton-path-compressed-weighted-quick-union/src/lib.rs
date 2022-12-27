@@ -5,12 +5,12 @@
 /// In addition to data structures in naive Quick Union we also
 /// maintain additional array representing weight of the specific ith node.
 
-pub struct WeightedQuickUnion<const SIZE: usize> {
+pub struct WeightedQuickUnionFind<const SIZE: usize> {
     arr: [usize; SIZE],
     weights: [usize; SIZE],
 }
 
-impl<const SIZE: usize> WeightedQuickUnion<SIZE> {
+impl<const SIZE: usize> WeightedQuickUnionFind<SIZE> {
     /// create new instance of QuickUnion
     pub fn new() -> Self {
         let mut arr = [0; SIZE];
@@ -18,7 +18,7 @@ impl<const SIZE: usize> WeightedQuickUnion<SIZE> {
         for index in 0..SIZE {
             arr[index] = index;
         }
-        WeightedQuickUnion {
+        WeightedQuickUnionFind {
             arr: arr,
             weights: [1; SIZE],
         }
@@ -27,6 +27,7 @@ impl<const SIZE: usize> WeightedQuickUnion<SIZE> {
     /// find the root of given num
     fn root(&mut self, mut num: usize) -> usize {
         while self.arr[num] != num {
+            // compress path
             self.arr[num] = self.arr[self.arr[num]];
             num = self.arr[num];
         }
@@ -63,7 +64,7 @@ mod tests {
 
     #[test]
     fn it_works_from_lecture() {
-        let mut qf = WeightedQuickUnion::<10>::new();
+        let mut qf = WeightedQuickUnionFind::<10>::new();
         qf.union(4, 3);
         qf.union(3, 8);
         qf.union(6, 5);
