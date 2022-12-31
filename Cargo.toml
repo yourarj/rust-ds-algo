@@ -28,4 +28,5 @@ members = [
     "university-of-princeton-path-compressed-weighted-quick-union-social",
     "university-of-princeton-path-compressed-weighted-quick-union-canonical-element",
     "university-of-princeton-path-compressed-percolation-threshold-via-monte-carlo-simulation",
+    "university-of-princeton-3sum",
 ]
