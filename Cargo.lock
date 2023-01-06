@@ -19,6 +19,10 @@ name = "codility-possible-string-palindrome"
 version = "0.1.0"
 
 [[package]]
+name = "gg-kadanes-algorithm"
+version = "0.1.0"
+
+[[package]]
 name = "leetcode-add-two-numbers"
 version = "0.1.0"
 
@@ -48,6 +52,10 @@ version = "0.1.0"
 
 [[package]]
 name = "leetcode-jump-game-iv"
+version = "0.1.0"
+
+[[package]]
+name = "leetcode-k-concat-max-sum"
 version = "0.1.0"
 
 [[package]]
