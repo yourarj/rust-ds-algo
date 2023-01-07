@@ -32,5 +32,5 @@ members = [
     "gg-kadanes-algorithm",
     "leetcode-k-concat-max-sum",
     "adaface-rust-tricky-quiz",
-    "minimize-the-heights",
+    "gg-minimize-the-heights",
 ]
