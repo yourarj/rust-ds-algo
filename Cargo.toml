@@ -31,4 +31,5 @@ members = [
     "university-of-princeton-3sum",
     "gg-kadanes-algorithm",
     "leetcode-k-concat-max-sum",
+    "adaface-rust-tricky-quiz",
 ]

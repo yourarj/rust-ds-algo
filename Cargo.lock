@@ -3,6 +3,10 @@
 version = 3
 
 [[package]]
+name = "adaface-rust-tricky-quiz"
+version = "0.1.0"
+
+[[package]]
 name = "codility-array-rotation"
 version = "0.1.0"
 
