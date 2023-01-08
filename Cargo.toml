@@ -33,4 +33,5 @@ members = [
     "leetcode-k-concat-max-sum",
     "adaface-rust-tricky-quiz",
     "gg-minimize-the-heights",
+    "leetcode-reverse-an-array-recursive",
 ]
