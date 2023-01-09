@@ -1,27 +1,19 @@
 use std::cmp::{max, min};
 
 pub fn get_min_diff(arr: &mut [i32], n: usize, k: i32) -> i32 {
-    // sorting the array
+    // sort the given array
     arr.sort();
 
-    // get min difference
+    // calculate initial min diff without any modification (current worst case)
     let mut min_diff = arr[n - 1] - arr[0];
-
-    // finding initial minimum difference
-    let mut smallest_tower = arr[0] + k;
-    let mut largest_tower = arr[n - 1] - k;
-
-    for num in 0..n - 1 {
-        smallest_tower = min(smallest_tower, arr[num + 1] - k);
-        largest_tower = max(largest_tower, arr[num] + k);
-
-        if smallest_tower < 0 {
-            continue;
-        }
-
-        min_diff = min(min_diff, largest_tower - smallest_tower);
+    
+    // check against each element
+    for i in 0..n - 1 {
+        let (x, y) = (arr[i], arr[i + 1]);
+        let tallest = max(arr[n - 1] - k, x + k);
+        let shortest = min(arr[0] + k, y - k);
+        min_diff = min(min_diff, tallest - shortest);
     }
-
     min_diff
 }
 

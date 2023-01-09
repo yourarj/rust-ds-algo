@@ -18,7 +18,7 @@ mod tests {
 
         let c = Container { foo: f };
 
-        // What will be the output 
+        // What will be the output
         // of following statement
         c.foo();
     }
