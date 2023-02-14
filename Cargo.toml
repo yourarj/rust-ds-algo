@@ -34,4 +34,5 @@ members = [
     "adaface-rust-tricky-quiz",
     "gg-minimize-the-heights",
     "leetcode-reverse-an-array-recursive",
+    "merge-sort",
 ]
