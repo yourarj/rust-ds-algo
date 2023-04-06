@@ -35,4 +35,5 @@ members = [
     "gg-minimize-the-heights",
     "leetcode-reverse-an-array-recursive",
     "merge-sort",
+    "leetcode-roman-to-integer",
 ]
