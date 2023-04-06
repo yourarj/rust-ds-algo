@@ -8,6 +8,7 @@ impl<T> Sample for fn(T) {
     }
 }
 
+#[allow(coherence_leak_check)]
 impl<T> Sample for fn(&T) {
     fn func(self) {
         print!("B");
