@@ -79,6 +79,10 @@ name = "leetcode-numbers-with-same-consecutive-differences"
 version = "0.1.0"
 
 [[package]]
+name = "leetcode-palindrome-number"
+version = "0.1.0"
+
+[[package]]
 name = "leetcode-queue-reconstruction-by-height"
 version = "0.1.0"
 
