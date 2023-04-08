@@ -36,5 +36,6 @@ members = [
     "leetcode-reverse-an-array-recursive",
     "merge-sort",
     "leetcode-roman-to-integer",
-    "leetcode-palindrome-number"
+    "leetcode-palindrome-number",
+    "leetcode-longest-common-prefix",
 ]
