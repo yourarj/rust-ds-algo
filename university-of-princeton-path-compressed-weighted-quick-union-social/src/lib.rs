@@ -6,12 +6,16 @@ pub struct Social<const SIZE: usize> {
     uf: WeightedQuickUnion<SIZE>,
 }
 
+impl<const SIZE: usize> Default for Social<SIZE> {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl<const SIZE: usize> Social<SIZE> {
     /// create new instance of Social
     pub fn new() -> Self {
-        Social {
-            uf: WeightedQuickUnion::new(),
-        }
+        Default::default()
     }
 
     /// find the root of given num

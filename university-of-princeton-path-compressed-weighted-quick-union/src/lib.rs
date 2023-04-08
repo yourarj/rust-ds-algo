@@ -13,15 +13,7 @@ pub struct WeightedQuickUnionFind<const SIZE: usize> {
 impl<const SIZE: usize> WeightedQuickUnionFind<SIZE> {
     /// create new instance of QuickUnion
     pub fn new() -> Self {
-        let mut arr = [0; SIZE];
-
-        for index in 0..SIZE {
-            arr[index] = index;
-        }
-        WeightedQuickUnionFind {
-            arr: arr,
-            weights: [1; SIZE],
-        }
+        Self::default()
     }
 
     /// find the root of given num
@@ -54,6 +46,20 @@ impl<const SIZE: usize> WeightedQuickUnionFind<SIZE> {
         } else {
             self.arr[root_b] = root_a;
             self.weights[root_a] += self.weights[root_b];
+        }
+    }
+}
+
+impl<const SIZE: usize> Default for WeightedQuickUnionFind<SIZE> {
+    fn default() -> Self {
+        let mut arr = [0; SIZE];
+
+        for index in 0..SIZE {
+            arr[index] = index;
+        }
+        WeightedQuickUnionFind {
+            arr,
+            weights: [1; SIZE],
         }
     }
 }

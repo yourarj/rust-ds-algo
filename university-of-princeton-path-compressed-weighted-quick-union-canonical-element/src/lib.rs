@@ -19,7 +19,7 @@ impl<const SIZE: usize> WeightedQuickUnion<SIZE> {
             arr[index] = index;
         }
         WeightedQuickUnion {
-            arr: arr,
+            arr,
             weights: [1; SIZE],
         }
     }

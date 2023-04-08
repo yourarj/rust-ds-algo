@@ -6,7 +6,7 @@ pub fn get_min_diff(arr: &mut [i32], n: usize, k: i32) -> i32 {
 
     // calculate initial min diff without any modification (current worst case)
     let mut min_diff = arr[n - 1] - arr[0];
-    
+
     // check against each element
     for i in 0..n - 1 {
         let (x, y) = (arr[i], arr[i + 1]);

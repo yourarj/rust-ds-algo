@@ -10,7 +10,7 @@ impl Solution {
 
         let mut carry_forward: i32 = 0;
 
-        while node_from_one != None || node_from_two != None {
+        while node_from_one.is_some() || node_from_two.is_some() {
             let sum = match (&node_from_one, &node_from_two) {
                 (Some(one), Some(two)) => one.val + two.val + carry_forward,
                 (Some(one), None) => one.val + carry_forward,
@@ -22,12 +22,12 @@ impl Solution {
             current_node_ref.next = Some(Box::new(ListNode::new(sum % 10)));
             current_node_ref = current_node_ref.next.as_mut().unwrap();
 
-            node_from_one = if node_from_one != None {
+            node_from_one = if node_from_one.is_some() {
                 node_from_one.unwrap().next
             } else {
                 node_from_one
             };
-            node_from_two = if node_from_two != None {
+            node_from_two = if node_from_two.is_some() {
                 node_from_two.unwrap().next
             } else {
                 node_from_two

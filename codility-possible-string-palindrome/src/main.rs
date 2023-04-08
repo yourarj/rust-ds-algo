@@ -21,7 +21,8 @@ fn solution(str: &str) -> String {
     let str_length = str.len();
     let approx_mid = str_length as f32 / 2_f32;
 
-    println!("approx mid: {}", approx_mid);
+    println!("approx mid: {approx_mid}");
+
     let mid_of_array = approx_mid;
 
     let mut str_chars: Vec<char> = str.chars().collect();

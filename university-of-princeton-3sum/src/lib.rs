@@ -46,7 +46,7 @@ impl ThreeSum {
     }
 
     fn next_valid_right_index(
-        values: &Vec<i32>,
+        values: &[i32],
         current_right_index: usize,
         start: usize,
     ) -> usize {

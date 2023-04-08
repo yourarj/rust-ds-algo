@@ -2,9 +2,7 @@ pub fn reverse(arr: &mut [i32], left: usize, right: usize) {
     if left >= right {
         return;
     }
-    let temp = arr[left];
-    arr[left] = arr[right];
-    arr[right] = temp;
+    arr.swap(left, right);
     reverse(arr, left + 1, right - 1)
 }
 
