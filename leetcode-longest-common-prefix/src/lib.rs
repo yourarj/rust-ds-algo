@@ -1,11 +1,11 @@
 pub struct Solution;
 
 impl Solution {
-    pub fn longest_common_prefix(strs: Vec<String>) -> String {
+    pub fn longest_common_prefix(input_strings: Vec<String>) -> String {
         let mut ans = String::new();
-        'outer: for (i, c) in strs[0].char_indices() {
-            for str in &strs[1..] {
-                if str.len() - 1 == i || &str[i..i + 1] != &strs[0][i..i + 1] {
+        'outer: for (i, c) in input_strings[0].char_indices() {
+            for str in &input_strings[1..] {
+                if str.len() < i + 1 || &str[i..i + 1] != &input_strings[0][i..i + 1] {
                     break 'outer;
                 }
             }
@@ -41,5 +41,22 @@ mod tests {
             "baffling".into(),
         ]);
         assert_eq!(result, "baffl");
+    }
+
+    #[test]
+    fn it_works_4() {
+        let result = Solution::longest_common_prefix(vec!["ab".into(), "a".into()]);
+        assert_eq!(result, "a");
+    }
+    #[test]
+    fn it_works_5() {
+        let result = Solution::longest_common_prefix(vec!["abab".into(), "aba".into(), "".into()]);
+        assert_eq!(result, "");
+    }
+    #[test]
+
+    fn it_works_6() {
+        let result = Solution::longest_common_prefix(vec!["".into(), "ab".into(), "a".into()]);
+        assert_eq!(result, "");
     }
 }
