@@ -45,11 +45,7 @@ impl ThreeSum {
         next
     }
 
-    fn next_valid_right_index(
-        values: &[i32],
-        current_right_index: usize,
-        start: usize,
-    ) -> usize {
+    fn next_valid_right_index(values: &[i32], current_right_index: usize, start: usize) -> usize {
         let mut next = current_right_index - 1;
         while next > start && values[next] == values[next + 1] {
             // to avoid outputting duplicates we keep decrementing our index

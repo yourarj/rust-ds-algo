@@ -38,4 +38,5 @@ members = [
     "leetcode-roman-to-integer",
     "leetcode-palindrome-number",
     "leetcode-longest-common-prefix",
+    "leetcode-valid-parentheses",
 ]

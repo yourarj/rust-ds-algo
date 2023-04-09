@@ -107,6 +107,10 @@ name = "leetcode-two-sum"
 version = "0.1.0"
 
 [[package]]
+name = "leetcode-valid-parentheses"
+version = "0.1.0"
+
+[[package]]
 name = "merge-sort"
 version = "0.1.0"
 
