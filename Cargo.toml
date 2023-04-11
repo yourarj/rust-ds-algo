@@ -39,4 +39,5 @@ members = [
     "leetcode-palindrome-number",
     "leetcode-longest-common-prefix",
     "leetcode-valid-parentheses",
+    "leetcode-merge-two-sorted-lists",
 ]
