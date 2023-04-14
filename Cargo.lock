@@ -95,6 +95,10 @@ name = "leetcode-queue-reconstruction-by-height"
 version = "0.1.0"
 
 [[package]]
+name = "leetcode-remove-duplicates-from-sorted-array"
+version = "0.1.0"
+
+[[package]]
 name = "leetcode-reverse-an-array-recursive"
 version = "0.1.0"
 
