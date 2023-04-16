@@ -41,4 +41,5 @@ members = [
     "leetcode-valid-parentheses",
     "leetcode-merge-two-sorted-lists",
     "leetcode-remove-duplicates-from-sorted-array",
+    "leetcode-sqrtx",
 ]

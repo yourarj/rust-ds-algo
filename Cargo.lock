@@ -107,6 +107,10 @@ name = "leetcode-roman-to-integer"
 version = "0.1.0"
 
 [[package]]
+name = "leetcode-sqrtx"
+version = "0.1.0"
+
+[[package]]
 name = "leetcode-subtract-the-product-and-sum-of-digits-of-an-integer"
 version = "0.1.0"
 
