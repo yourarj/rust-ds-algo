@@ -42,4 +42,5 @@ members = [
     "leetcode-merge-two-sorted-lists",
     "leetcode-remove-duplicates-from-sorted-array",
     "leetcode-sqrtx",
+    "leetcode-find-the-index-of-the-first-occurrence-in-a-string",
 ]
