@@ -10,7 +10,7 @@ pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
     let mut answer = Vec::new();
     for (index, element) in nums.into_iter().enumerate() {
         if complement_map_with_index.contains_key(&element) {
-            answer.push(*complement_map_with_index.get(&element).unwrap().deref());
+            answer.push(*complement_map_with_index.get(&element).unwrap());
             answer.push(index as i32);
             break;
         }

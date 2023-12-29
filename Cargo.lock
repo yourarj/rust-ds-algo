@@ -131,6 +131,10 @@ name = "merge-sort"
 version = "0.1.0"
 
 [[package]]
+name = "oracle-linked-list-unique-elements"
+version = "0.1.0"
+
+[[package]]
 name = "university-of-princeton-3sum"
 version = "0.1.0"
 

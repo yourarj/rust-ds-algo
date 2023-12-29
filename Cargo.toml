@@ -43,4 +43,5 @@ members = [
     "leetcode-remove-duplicates-from-sorted-array",
     "leetcode-sqrtx",
     "leetcode-find-the-index-of-the-first-occurrence-in-a-string",
+    "oracle-linked-list-unique-elements",
 ]
