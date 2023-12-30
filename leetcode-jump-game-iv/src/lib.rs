@@ -5,10 +5,7 @@ impl Solution {
     pub fn min_jumps(arr: Vec<i32>) -> i32 {
         let mut neighborhood_map: HashMap<i32, Vec<usize>> = HashMap::new();
         for (index, value) in arr.iter().enumerate() {
-            neighborhood_map
-                .entry(*value)
-                .or_insert(Vec::new())
-                .push(index)
+            neighborhood_map.entry(*value).or_default().push(index)
         }
 
         // Self::find_shorted_path(&arr, &mut neighborhood_map, vec![0])

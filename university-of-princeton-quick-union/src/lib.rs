@@ -53,9 +53,9 @@ mod tests {
         qf.union(1, 0);
         qf.union(6, 7);
 
-        assert_eq!(false, qf.connected(4, 6));
-        assert_eq!(true, qf.connected(3, 4));
-        assert_eq!(true, qf.connected(6, 2));
-        assert_eq!(true, qf.connected(6, 6));
+        assert!(!qf.connected(4, 6));
+        assert!(qf.connected(3, 4));
+        assert!(qf.connected(6, 2));
+        assert!(qf.connected(6, 6));
     }
 }

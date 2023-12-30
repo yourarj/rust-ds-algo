@@ -22,13 +22,13 @@ impl Solution {
             current_node_ref.next = Some(Box::new(ListNode::new(sum % 10)));
             current_node_ref = current_node_ref.next.as_mut().unwrap();
 
-            node_from_one = if node_from_one.is_some() {
-                node_from_one.unwrap().next
+            node_from_one = if let Some(inner) = node_from_one {
+                inner.next
             } else {
                 node_from_one
             };
-            node_from_two = if node_from_two.is_some() {
-                node_from_two.unwrap().next
+            node_from_two = if let Some(inner) = node_from_two {
+                inner.next
             } else {
                 node_from_two
             };

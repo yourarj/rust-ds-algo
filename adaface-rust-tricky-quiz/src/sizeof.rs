@@ -17,10 +17,13 @@ mod tests {
     fn foo_test() {
         let sample = &Sample;
         foo(sample);
+        #[allow(noop_method_call)]
         foo(sample.clone());
 
         let sample2 = &();
         foo(sample2);
+        #[allow(clippy::unit_arg)]
+        #[allow(clippy::clone_on_copy)]
         foo(sample2.clone());
 
         let sample3 = Rc::new(());

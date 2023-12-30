@@ -1,5 +1,3 @@
-use std::ops::Deref;
-
 fn main() {
     println!("Hello, world!");
 }

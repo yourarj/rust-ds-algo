@@ -5,16 +5,14 @@ pub struct Solution;
 impl Solution {
     pub fn length_of_longest_substring(s: String) -> i32 {
         let mut left = -1;
-        let mut right = 0;
         let mut longest_substring = 0;
-        let mut char_map = HashMap::with_capacity(s.len());
+        let mut char_map: HashMap<char, i32> = HashMap::with_capacity(s.len());
 
-        for c in s.chars() {
-            if let Some(e) = char_map.insert(c, right) {
+        for (right, c) in s.chars().enumerate() {
+            if let Some(e) = char_map.insert(c, right as i32) {
                 left = max(e, left);
             }
-            longest_substring = max(longest_substring, right - left);
-            right += 1;
+            longest_substring = max(longest_substring, right as i32 - left);
         }
 
         longest_substring

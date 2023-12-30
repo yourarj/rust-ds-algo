@@ -13,7 +13,7 @@ impl Solution {
         let mut num = 0;
         let mut last_operand = '+';
         for current_char in (s + ".").chars() {
-            if ('0'..='9').contains(&current_char) {
+            if current_char.is_ascii_digit() {
                 num = num * 10 + (current_char as i32 - '0' as i32);
             } else {
                 match last_operand {

@@ -26,7 +26,7 @@ impl Solution {
                 // check with adding and subtracting diff
                 for branch_num in possible_nums.iter() {
                     let new_suffix_num = (partial_build_num % 10) + branch_num;
-                    if new_suffix_num >= 0 && new_suffix_num < 10 {
+                    if (0..10).contains(&new_suffix_num) {
                         new_level_vec.push(partial_build_num * 10 + new_suffix_num);
                     }
                 }

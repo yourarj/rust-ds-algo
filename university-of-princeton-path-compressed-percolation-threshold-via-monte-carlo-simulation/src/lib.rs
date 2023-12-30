@@ -11,11 +11,10 @@ pub struct Percolation<const SIZE: usize> {
     grid_open_state: [[bool; SIZE]; SIZE],
 }
 
-impl<const SIZE: usize> Percolation<SIZE> {
-    // creates n-by-n grid, with all sites initially blocked
-    pub fn new() -> Self {
+impl<const SIZE: usize> Default for Percolation<SIZE> {
+    fn default() -> Self {
         let total_grid_elements = SIZE * SIZE;
-        Percolation {
+        Self {
             grid_size: SIZE,
             grid: WeightedQuickUnionFind::new(),
             virtual_top: 0,
@@ -24,6 +23,13 @@ impl<const SIZE: usize> Percolation<SIZE> {
             total_open_sites: 0,
             grid_open_state: [[false; SIZE]; SIZE],
         }
+    }
+}
+
+impl<const SIZE: usize> Percolation<SIZE> {
+    // creates n-by-n grid, with all sites initially blocked
+    pub fn new() -> Self {
+        Self::default()
     }
 
     // opens the site (row, col) if it is not open already
@@ -123,7 +129,7 @@ mod tests {
         per.open(0, 0);
         per.open(1, 0);
         per.open(2, 0);
-        assert_eq!(false, per.percolates());
+        assert!(!per.percolates());
         per.open(3, 0);
         assert!(per.percolates());
     }
@@ -143,7 +149,7 @@ mod tests {
         per.open(2, 1);
         per.open(2, 0);
 
-        assert_eq!(false, per.percolates());
+        assert!(!per.percolates());
         per.open(3, 0);
         assert!(per.percolates());
     }

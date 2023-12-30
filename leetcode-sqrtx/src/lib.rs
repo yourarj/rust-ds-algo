@@ -6,7 +6,7 @@ impl Solution {
         while r * r > x {
             r = (r + x / r) / 2;
         }
-        return r as i32;
+        r as i32
     }
 }
 

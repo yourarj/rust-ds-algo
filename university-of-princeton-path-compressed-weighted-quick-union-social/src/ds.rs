@@ -10,18 +10,26 @@ pub struct WeightedQuickUnion<const SIZE: usize> {
     weights: [usize; SIZE],
 }
 
-impl<const SIZE: usize> WeightedQuickUnion<SIZE> {
-    /// create new instance of QuickUnion
-    pub fn new() -> Self {
+impl<const SIZE: usize> Default for WeightedQuickUnion<SIZE> {
+    fn default() -> Self {
         let mut arr = [0; SIZE];
 
-        for index in 0..SIZE {
+        (0..SIZE).for_each(|index| {
             arr[index] = index;
-        }
-        WeightedQuickUnion {
+        });
+
+        Self {
             arr,
             weights: [1; SIZE],
         }
+    }
+}
+
+impl<const SIZE: usize> WeightedQuickUnion<SIZE> {
+    /// create new instance of QuickUnion
+    #[allow(dead_code)]
+    pub fn new() -> Self {
+        Self::default()
     }
 
     /// find the root of given num
@@ -39,13 +47,13 @@ impl<const SIZE: usize> WeightedQuickUnion<SIZE> {
     }
 
     pub fn union(&mut self, a: usize, b: usize) {
+        if a == b {
+            return;
+        }
+
         // TODO update code to for weight comparison
         let root_a = self.root(a);
         let root_b = self.root(b);
-
-        if root_a == root_b {
-            return;
-        }
 
         if self.weights[root_a] < self.weights[root_b] {
             self.arr[root_a] = root_b;

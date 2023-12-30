@@ -10,18 +10,24 @@ pub struct WeightedQuickUnion<const SIZE: usize> {
     weights: [usize; SIZE],
 }
 
-impl<const SIZE: usize> WeightedQuickUnion<SIZE> {
-    /// create new instance of QuickUnion
-    pub fn new() -> Self {
+impl<const SIZE: usize> Default for WeightedQuickUnion<SIZE> {
+    fn default() -> Self {
         let mut arr = [0; SIZE];
 
-        for index in 0..SIZE {
+        (0..SIZE).for_each(|index| {
             arr[index] = index;
-        }
-        WeightedQuickUnion {
+        });
+        Self {
             arr,
             weights: [1; SIZE],
         }
+    }
+}
+
+impl<const SIZE: usize> WeightedQuickUnion<SIZE> {
+    /// create new instance of QuickUnion
+    pub fn new() -> Self {
+        Self::default()
     }
 
     /// find the root of given num

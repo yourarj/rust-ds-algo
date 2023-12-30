@@ -24,18 +24,18 @@ mod tests {
     #[test]
     fn it_works() {
         let result = Solution::is_palindrome(101);
-        assert_eq!(result, true);
+        assert!(result);
     }
 
     #[test]
     fn it_does_not_work_with_negative() {
         let result = Solution::is_palindrome(-101);
-        assert_eq!(result, false);
+        assert!(!result);
     }
 
     #[test]
     fn it_does_not_work() {
         let result = Solution::is_palindrome(10);
-        assert_eq!(result, false);
+        assert!(!result);
     }
 }

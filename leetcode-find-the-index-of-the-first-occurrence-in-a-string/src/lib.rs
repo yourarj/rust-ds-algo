@@ -10,7 +10,7 @@ impl Solution {
         }
 
         for i in 0..=(hlen - nlen) {
-            if &haystack[i..i + nlen] == needle {
+            if haystack[i..i + nlen] == needle {
                 return i as i32;
             }
         }

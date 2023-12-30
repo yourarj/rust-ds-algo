@@ -28,10 +28,7 @@ impl CustomStack {
     }
 
     pub fn pop(&mut self) -> i32 {
-        match self.inner.pop() {
-            Some(num) => num,
-            None => -1,
-        }
+        self.inner.pop().unwrap_or(-1)
     }
 
     pub fn increment(&mut self, k: i32, val: i32) {

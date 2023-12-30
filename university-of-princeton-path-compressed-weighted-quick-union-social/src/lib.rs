@@ -8,7 +8,9 @@ pub struct Social<const SIZE: usize> {
 
 impl<const SIZE: usize> Default for Social<SIZE> {
     fn default() -> Self {
-        Self::new()
+        Self {
+            uf: WeightedQuickUnion::default(),
+        }
     }
 }
 
@@ -34,7 +36,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn it_works_from_lecture() {
+    fn befriend_test() {
         let mut soc = Social::<10>::new();
         soc.befriend(4, 3);
         soc.befriend(3, 8);

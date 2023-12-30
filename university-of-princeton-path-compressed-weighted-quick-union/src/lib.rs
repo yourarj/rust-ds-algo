@@ -54,9 +54,9 @@ impl<const SIZE: usize> Default for WeightedQuickUnionFind<SIZE> {
     fn default() -> Self {
         let mut arr = [0; SIZE];
 
-        for index in 0..SIZE {
+        (0..SIZE).for_each(|index| {
             arr[index] = index;
-        }
+        });
         WeightedQuickUnionFind {
             arr,
             weights: [1; SIZE],
@@ -90,15 +90,15 @@ mod tests {
         // weights = {1, 1, 3, 1, 4, 1, 10, 1, 1, 1}
 
         // set two all mus be connected
-        assert_eq!(true, qf.connected(0, 0));
-        assert_eq!(true, qf.connected(0, 1));
-        assert_eq!(true, qf.connected(0, 2));
-        assert_eq!(true, qf.connected(0, 3));
-        assert_eq!(true, qf.connected(0, 4));
-        assert_eq!(true, qf.connected(0, 5));
-        assert_eq!(true, qf.connected(0, 6));
-        assert_eq!(true, qf.connected(0, 7));
-        assert_eq!(true, qf.connected(0, 8));
-        assert_eq!(true, qf.connected(0, 9));
+        assert!(qf.connected(0, 0));
+        assert!(qf.connected(0, 1));
+        assert!(qf.connected(0, 2));
+        assert!(qf.connected(0, 3));
+        assert!(qf.connected(0, 4));
+        assert!(qf.connected(0, 5));
+        assert!(qf.connected(0, 6));
+        assert!(qf.connected(0, 7));
+        assert!(qf.connected(0, 8));
+        assert!(qf.connected(0, 9));
     }
 }

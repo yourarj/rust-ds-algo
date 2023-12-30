@@ -42,18 +42,18 @@ mod tests {
     fn positive_test() {
         let input = vec![vec![2, 1, 5], vec![3, 3, 7]];
         let capacity = 4;
-        assert_eq!(false, Solution::car_pooling(input, capacity))
+        assert!(!Solution::car_pooling(input, capacity))
     }
     #[test]
     fn negative_test() {
         let input = vec![vec![2, 1, 5], vec![3, 3, 7]];
         let capacity = 5;
-        assert_eq!(true, Solution::car_pooling(input, capacity))
+        assert!(Solution::car_pooling(input, capacity))
     }
     #[test]
     fn negative_test_more_passenger_than_capacity() {
         let input = vec![vec![2, 1, 5], vec![3, 3, 7], vec![100, 6, 7]];
         let capacity = 100;
-        assert_eq!(false, Solution::car_pooling(input, capacity))
+        assert!(!Solution::car_pooling(input, capacity))
     }
 }

@@ -10,19 +10,19 @@ impl Solution {
                 stack.push(par);
             } else {
                 match stack.last() {
-                    a if a == Some(&'{') => {
+                    Some(&'{') => {
                         if par != '}' {
                             break;
                         }
                         stack.pop();
                     }
-                    a if a == Some(&'[') => {
+                    Some(&'[') => {
                         if par != ']' {
                             break;
                         }
                         stack.pop();
                     }
-                    a if a == Some(&'(') => {
+                    Some(&'(') => {
                         if par != ')' {
                             break;
                         }
@@ -35,7 +35,7 @@ impl Solution {
                 }
             }
         }
-        stack.len() == 0
+        stack.is_empty()
     }
 }
 
@@ -46,24 +46,24 @@ mod tests {
     #[test]
     fn it_works() {
         let result = Solution::is_valid("()".into());
-        assert_eq!(result, true);
+        assert!(result);
     }
 
     #[test]
     fn it_works_2() {
         let result = Solution::is_valid("()[]{}".into());
-        assert_eq!(result, true);
+        assert!(result);
     }
 
     #[test]
     fn it_works_3() {
         let result = Solution::is_valid("(]".into());
-        assert_eq!(result, false);
+        assert!(!result);
     }
 
     #[test]
     fn it_works_4() {
         let result = Solution::is_valid("]".into());
-        assert_eq!(result, false);
+        assert!(!result);
     }
 }

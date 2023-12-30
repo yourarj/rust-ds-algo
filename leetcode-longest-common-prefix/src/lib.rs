@@ -5,7 +5,7 @@ impl Solution {
         let mut ans = String::new();
         'outer: for (i, c) in input_strings[0].char_indices() {
             for str in &input_strings[1..] {
-                if str.len() < i + 1 || &str[i..i + 1] != &input_strings[0][i..i + 1] {
+                if str.len() < i + 1 || str[i..i + 1] != input_strings[0][i..i + 1] {
                     break 'outer;
                 }
             }
