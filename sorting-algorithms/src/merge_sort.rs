@@ -50,7 +50,6 @@ mod tests {
         let mut arr = [5, 4, 3, 2, 1, 0];
         merge_sort(&mut arr, 0, 5);
 
-        println!("arr: {:?}", &arr);
         assert_eq!(arr[0], 0);
         assert_eq!(arr[3], 3);
         assert_eq!(arr[5], 5);
@@ -62,7 +61,6 @@ mod tests {
         let end = arr.len() - 1;
         merge_sort(&mut arr, 0, end);
 
-        println!("arr: {:?}", &arr);
         assert_eq!(arr[0], 0);
         assert_eq!(arr[3], 2);
         assert_eq!(arr[5], 2);

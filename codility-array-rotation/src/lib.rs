@@ -1,9 +1,4 @@
-fn main() {
-    assert_eq!(solution(&mut [3, 8, 9, 7, 6], 3), [9, 7, 6, 3, 8]);
-    assert_eq!(solution(&mut [1, 2, 3, 4], 4), [1, 2, 3, 4]);
-}
-
-fn solution(input_array: &mut [i32], rotations: i32) -> &[i32] {
+pub fn solution(input_array: &mut [i32], rotations: i32) -> &[i32] {
     if input_array.is_empty() {
         return input_array;
     }
@@ -19,4 +14,15 @@ fn solution(input_array: &mut [i32], rotations: i32) -> &[i32] {
     }
 
     input_array
+}
+
+#[cfg(test)]
+mod tests {
+    use crate::solution;
+
+    #[test]
+    fn it_works() {
+        assert_eq!(solution(&mut [3, 8, 9, 7, 6], 3), [9, 7, 6, 3, 8]);
+        assert_eq!(solution(&mut [1, 2, 3, 4], 4), [1, 2, 3, 4]);
+    }
 }

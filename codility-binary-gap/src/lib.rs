@@ -1,12 +1,4 @@
-fn main() {
-    println!("Max gap for {} is {}", 1041, solution(1041));
-    println!("Max gap for {} is {}", 10, solution(10));
-    println!("Max gap for {} is {}", 10, solution(13748));
-    println!("Max gap for {} is {}", 10, solution(1_000_000_001));
-    println!("Max gap for {} is {}", 10, solution(10123));
-}
-
-fn solution(mut num: i32) -> i32 {
+pub fn solution(mut num: i32) -> i32 {
     let mut max_gap = 0;
 
     let mut current_gap = 0;
@@ -23,4 +15,10 @@ fn solution(mut num: i32) -> i32 {
         num >>= 1;
     }
     max_gap
+}
+
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn it_works() {}
 }

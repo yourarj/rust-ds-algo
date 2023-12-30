@@ -16,14 +16,8 @@ impl CustomStack {
     }
 
     pub fn push(&mut self, x: i32) {
-        println!(
-            "Push {:02} : Current stack length is {}",
-            x,
-            self.inner.len()
-        );
         if self.inner.len() < self.max_size as usize {
             self.inner.push(x);
-            println!("{:?}", self.inner);
         }
     }
 

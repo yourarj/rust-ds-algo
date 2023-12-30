@@ -75,9 +75,7 @@ mod tests {
     fn it_works_from_lecture() {
         let mut qf = WeightedQuickUnion::<10>::new();
         qf.union(4, 3);
-        println!("{}", qf.find_largest(3));
 
-        println!("{}", qf.find_largest(3));
         qf.union(3, 8);
         qf.union(6, 5);
         qf.union(9, 4);

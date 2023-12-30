@@ -62,7 +62,6 @@ mod tests {
     fn it_works() {
         let mut arr = [-1, 1, 2, -1, 5, -3];
         let result = ThreeSum::three_sum(&mut arr);
-        println!("result is {:?}", result);
 
         assert!(result.first().eq(&Some(&vec![-3, 1, 2])));
         assert!(result.get(1).eq(&Some(&vec![-1, -1, 2])));

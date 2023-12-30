@@ -1,23 +1,4 @@
-fn main() {
-    println!("?a? : {}", solution("?a?"));
-    println!();
-
-    println!("abac?a? : {}", solution("abac?a?"));
-    println!();
-
-    println!("???? : {}", solution("????"));
-    println!();
-
-    println!("??????? : {}", solution("???????"));
-    println!();
-
-    println!("??ab : {}", solution("??ab"));
-    println!();
-
-    println!("???????asdfce : {}", solution("???????asdfce"));
-}
-
-fn solution(str: &str) -> String {
+pub fn solution(str: &str) -> String {
     let str_length = str.len();
     let approx_mid = str_length as f32 / 2_f32;
 
@@ -49,4 +30,24 @@ fn solution(str: &str) -> String {
         }
     }
     str_chars.into_iter().collect()
+}
+
+#[cfg(test)]
+mod tests {
+    use crate::solution;
+
+    #[test]
+    fn it_works() {
+        assert_eq!("aaa", solution("?a?"));
+
+        assert_eq!("NO", solution("abac?a?"));
+
+        assert_eq!("aaaa", solution("????"));
+
+        assert_eq!("aaaaaaa", solution("???????"));
+
+        assert_eq!("baab", solution("??ab"));
+
+        assert_eq!("ecfdsaaasdfce", solution("???????asdfce"));
+    }
 }

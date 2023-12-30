@@ -1,6 +1,4 @@
-fn main() {
-    println!("Hello, world!");
-}
+fn main() {}
 
 use std::collections::HashMap;
 pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {

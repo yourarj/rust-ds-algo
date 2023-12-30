@@ -15,10 +15,6 @@ name = "codility-binary-gap"
 version = "0.1.0"
 
 [[package]]
-name = "codility-frog-jump"
-version = "0.1.0"
-
-[[package]]
 name = "codility-possible-string-palindrome"
 version = "0.1.0"
 
