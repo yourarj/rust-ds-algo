@@ -123,11 +123,11 @@ name = "leetcode-valid-parentheses"
 version = "0.1.0"
 
 [[package]]
-name = "merge-sort"
+name = "oracle-linked-list-unique-elements"
 version = "0.1.0"
 
 [[package]]
-name = "oracle-linked-list-unique-elements"
+name = "sorting-algorithms"
 version = "0.1.0"
 
 [[package]]
